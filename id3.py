@@ -15,8 +15,7 @@ def class_counter(input):
     return classes
 
 def entropy(input):
-    classes = class_counter(input)
-    s = 0.0
+    classes, s = class_counter(input), 0.0
     for key in classes.keys():
         freq = float( classes[key] ) / len(input)
         s  = s - freq * math.log(freq, 2)
@@ -72,8 +71,8 @@ def printtree(tree,indent=' '):
     else:
         print( str(tree.col)+':'+str(tree.value)+'?')
  
-        print( indent + 'T->', end='')
+        print( indent + 'T: ', end='')
         printtree(tree.trueBranch, indent + ' '),
-        print( indent+'F->', end='')
+        print( indent+'F: ', end='')
         printtree(tree.falseBranch,indent + ' ')
 

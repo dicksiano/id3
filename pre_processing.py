@@ -22,5 +22,3 @@ def pre_process_ratings():
         res.append([tmp[0], tmp[1], tmp[2], movies[ int(line[1]) ], line[2]])
 
     return res
-
-print(pre_process_ratings())
