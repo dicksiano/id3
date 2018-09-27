@@ -1,10 +1,8 @@
 import math
 
 def split_data(data, column, value):
-    split = lambda row: row[column] == value
-
-    inclusion = [row for row in data if split(row)]
-    exclusion = [row for row in data if not split(row)]
+    inclusion = [row for row in data if row[column] == value]
+    exclusion = [row for row in data if not row[column] == value]
 
     return (inclusion, exclusion)
 
