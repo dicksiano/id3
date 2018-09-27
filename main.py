@@ -1,6 +1,9 @@
 from pre_processing import *
 from id3 import *
 
-data = pre_process_ratings()
+input = pre_process_ratings()
+
+data = input[::10]
+
 tree = id3(data)
-print(tree)
+printtree(tree)

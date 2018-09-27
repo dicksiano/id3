@@ -66,10 +66,11 @@ def predict(input, tree):
     return predict(input, tree.falseBranch)
 
 def printtree(tree,indent=' '):
+    questions = ["Genero", "Idade", "Ocupação", "Categoria"]
     if tree.results != None:
         print( str(tree.results) )
     else:
-        print( str(tree.col)+':'+str(tree.value)+'?')
+        print( questions[tree.col] + ': '+str(tree.value)+'?')
  
         print( indent + 'T: ', end='')
         printtree(tree.trueBranch, indent + ' '),
