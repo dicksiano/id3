@@ -34,5 +34,5 @@ for t in test:
         if result == b: tn += 1
         else: fn += 1
 
-print(float(tp)/len(test), float(tn)/len(test), float(fp)/len(test), float(fn)/len(test))
+print(float(tp)/len(test), float(tn)/len(test), float(fp)/len(test), float(fn)/len(test), float(tp+tn)/len(test))
     
