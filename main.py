@@ -4,7 +4,7 @@ import random
 
 input = pre_process_ratings()
 
-data = input
+data = input[::1000]
 test = input
 
 tree = id3(data)

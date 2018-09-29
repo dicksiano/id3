@@ -20,7 +20,7 @@ def pre_process_ratings():
     for line in dataset('ratings.dat'):
         tmp = users[ int(line[0]) ]
         movie = movies[ int(line[1]) ].split('|')
-        rate = 1 if int( line[2] ) > 3 else 0
+        rate = 1 if int( line[2] ) > 2 else 0
         for m in movie:
             res.append([tmp[0], tmp[1], tmp[2], m, rate])
     return res
