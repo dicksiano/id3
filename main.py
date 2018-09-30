@@ -8,7 +8,9 @@ data = input[::1000]
 test = input
 
 tree = id3(data)
-#printtree(tree)
+
+#questions = ["Genero", "Idade", "Ocupação", "Categoria"]
+#printtree(tree, questions)
 
 """
 num_pos = 0
@@ -79,3 +81,30 @@ print(float(tp_priori)/len(test), float(tn_priori)/len(test), float(fp_priori)/l
 print(float(tp_random)/len(test), float(tn_random)/len(test), float(fp_random)/len(test), float(fn_random)/len(test), float(tp_random+tn_random)/len(test))
 #print(float(num_neg)/len(test), float(num_pos)/len(test))
     
+personal_data = [ 
+                    ['M', '25', '4', 'Comedy'],
+                    ['M', '25', '4', "Adventure"],
+                    ['M', '25', '4', 'Crime'],
+                    ['M', '25', '4', 'Action'],
+                    ['M', '25', '4', 'Thriller'],
+                    ['M', '25', '4', 'Action'],
+                    ['M', '25', '4', 'Crime'],
+                    ['M', '25', '4', 'Drama'],
+                    ['M', '25', '4', 'Drama'],
+                    ['M', '25', '4', 'Horror']
+]
+
+for t in personal_data:
+    # Decision Tree
+    a = predict(t,tree)
+
+    neg = pos = 0
+    if 0 in a:
+        neg = a[0]
+    if 1 in a:
+        posit = a[1]
+
+    result = 0
+    if posit > neg: result = 1
+
+    print(result)
